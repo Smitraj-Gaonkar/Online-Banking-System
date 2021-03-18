@@ -1,0 +1,36 @@
+-----------package.json & package-lock.json---------
+=>  npm init
+=>  -----------editing package.json-----------
+    => "name" : "banking"   (project-name)
+    => "main" : "app.js"    (main file)
+    => "scripts" : {
+            "devStart" : "nodemon app.js"
+        }
+
+-----------importing node modules---------  
+=>  -----------required dependencies-----------
+=> npm i body-parser dotenv ejs express mongoopse nodemon --save
+=>  -----------required dev dependencies-----------
+=> npm i axios bcrypt connect-flash express-ejs-layouts express-session
+    method-override passport passport-local path router --save
+    (optional- npm i flash session --save)
+
+-----------mongodb setup-----------
+mongodb.com
+=> Sign In --> with GoogleAccount --> Login
+=> Set Project Name (Online Banking) + TimeZone
+=> Altas --> Create Cluster --> Shared Cluster --> Cluster Name (Bank_Cluster)
+=> Security --> Database Access --> Add User --> username(admin) --> password
+=> Security --> Network Acess --> Add IP address --> '0.0.0.0/0' or "add only your current ip address"
+=> Data Storage --> Clusters 	--> Collections --> Database name(dbname: bank) --> collection name (users)
+				--> Connect --> Connect your Application --> Add ur connection string: srv
+=> Open "server/config/keys.js" and add your MongoDB URI, local or Atlas for connecting to your database
+
+----------required sites----------
+VSC:    https://code.visualstudio.com/
+NODEJS: https://nodejs.org/
+CSS:    https://getbootstrap.com/
+        https://fontawesome.com/
+Validation & Authentication:
+        http://www.passportjs.org/
+Other:  https://www.postman.com/

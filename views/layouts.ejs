@@ -1,0 +1,172 @@
+<!--Emmet Abbreviation-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/a30d1d666b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        function preback(){window.history.forward()}
+        setTimeout("preback()",0)
+        window.onunload= function(){(null)}
+    </script>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif; 
+}
+body{
+    background: #e6ffff;
+}
+a,
+a:hover,
+a:focus{
+    text-decoration: none;
+    background: inherit;
+    color:inherit;
+    transition: all 0.3s;
+} 
+.form-control{
+    font-size: 0.9rem;
+}
+.form-select{
+    font-size: 0.9rem;
+}
+.wrapper{
+    display: flex;
+    position: relative;
+}
+.navbar1{
+    background-color: #003b4d;
+}
+.navbar2{
+    border-bottom: 1px solid #007a99;
+}
+.wrapper .sidebar{
+    position: absolute;
+    width: 200px;
+    height: 547px;
+    background: #007a99;
+    padding: 10px;
+}
+
+.wrapper .sidebar h6{
+    text-transform:uppercase;
+    text-align:center;
+    background: #003b4d;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.wrapper .sidebar ul li {
+    
+    margin-left: -30px;
+    text-transform: none;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px #000;
+    color:#fff;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #000;
+}
+
+.wrapper .sidebar ul li a .fas{
+    width: 30px;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    padding: 10px;
+}
+.wrapper .sidebar ul li a:hover{
+    background: #fff;
+    color: #003b4d;
+    text-shadow: 1px 1px #fff;
+}
+
+.wrapper .sidebar ul ul li{
+    font-size: 0.8rem;
+    background: #ccf5ff;
+    color: #003b4d;
+    text-shadow: 1px 1px #fff;
+    margin-left: -62px;  
+}
+
+.wrapper .sidebar ul ul a {
+    padding-left: 40px;
+}
+
+.wrapper .sidebar ul ul a:hover {
+    background: #003b4d;
+    color:#fff;
+    text-shadow: 1px 1px #000;
+    
+}
+
+.wrapper .sidebar .LogOut {
+    position:fixed;
+    bottom: 20px;
+    margin-left: -20px;
+}
+.wrapper .sidebar .LogOut a {
+    display: block;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 150px;
+    padding:8px;
+    background: #003b4d;
+    color: #fff;
+}
+
+.wrapper .sidebar .LogOut a:hover{
+    background: #fff;
+    color:#003d4d;
+}
+
+.wrapper .sidebar .LogOut a .fas{
+    width: 25px;
+}
+
+.main_content{
+    width: auto;
+    height: 547px;
+    margin-left: 200px;
+    font-size: 0.9rem;
+    overflow-y:scroll;
+}
+ 
+.main_content .header{
+    padding: 10px;
+    background: #003d4d;
+    color: #fff;
+    font-weight: 700;
+}
+
+.main_content .info{
+    margin: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container-maxwidth">
+        <%- body %>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" 
+    integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" 
+    integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+</body>
+</html>

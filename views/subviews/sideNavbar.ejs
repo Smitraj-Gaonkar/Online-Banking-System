@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Side-Navbar</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <!-- sidebar header -->
+            <h6>Welcome, Admin!</h6>
+            <!-- sidebar body-->
+            <ul>
+                <li><a href="/admin"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                <li><a><i class="fas fa-users"></i>User Accounts</a></li>
+                    <ul>
+                        <li>
+                            <a href="/admin/addUser"><i class="fas fa-user-plus"></i>Add Users</a>
+                        </li>
+                        <li>
+                            <a href="/admin/manageUser"><i class="fas fa-user-edit"></i>Manage Users</a>
+                        </li>
+                    </ul> 
+                
+                <li><a><i class="fas fa-money-check"></i>Payments</a></li>
+                    <ul>
+                        <li>
+                            <a href="/admin/fund"><i class="fas fa-handshake"></i>Fund Transfer</a>
+                        </li>
+                        <li>
+                            <a href="/admin/listStats"><i class="fas fa-file-invoice"></i></i>Statement</a>
+                        </li>
+                    </ul> 
+                <div class="LogOut">
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                </div>
+                
+            </ul>
+        </div>
+        <!-- 
+        <div class="main_content">
+            <div class="header">
+                Header
+            </div>
+            <div class="info">
+                Content
+            </div>    
+        </div>
+        -->
+    </div>
+</body>
+</html>

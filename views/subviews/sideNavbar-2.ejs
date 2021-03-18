@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>Side-Navbar</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <!-- sidebar header -->
+            <h6>Welcome, <%=  user.fname || data.fname %>!</h6>
+            <!-- sidebar body-->
+            <ul>
+                <li><a href="/user?id=<%= user._id %>"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                <li><a href="/user/myProfile?id=<%= user._id %>"><i class="fas fa-user"></i>My Profile</a></li>
+                <li><a href="/user/transfund?id=<%= user._id %>"><i class="fas fa-handshake"></i>Transfer Funds</a></li>
+                <li><a href="/user/userStats?id=<%= user._id %>"><i class="fas fa-file-invoice"></i>Statement</a></li>
+
+                <div class="LogOut">
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                </div>
+                
+            </ul>
+        </div>
+        <!-- 
+        <div class="main_content">
+            <div class="header">
+                Header
+            </div>
+            <div class="info">  
+                Content
+            </div>    
+        </div>
+        -->
+    </div>
+</body>
+</html>

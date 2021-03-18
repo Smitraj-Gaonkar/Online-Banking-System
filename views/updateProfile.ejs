@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+    <title>Update Profile</title>
+</head>
+<body>
+    <%- include('./subviews/navbar')-%>
+    <%- include('./subviews/sideNavbar-2')-%>
+    <div class="main_content">
+        <div class="header ps-3 pt-3">
+            <h6>Update Profile</h6>
+        </div>
+        <div class="info">
+            <div class="card p-4" style="width:100%rem">
+            <!--Messages: If any-->
+            <div class="col-12"><%- include('./subviews/messages') -%> </div>
+            <form action="/user/users/<%= user._id %>" method="POST" class="row">
+                <input type="hidden" class="form-control" id="_id" name="_id"value="<%= user._id %>">
+                <!--User Details-->
+                <div class="col-sm-4">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" readonly
+                    placeholder="Enter First Name" maxlength="15"
+                    value="<%= user.fname || data.fname %>">
+                </div>
+                <div class="col-sm-4">
+                    <label for="mname" class="form-label">Middle Name</label>
+                    <input type="text" class="form-control" id="mname" name="mname" disabled
+                    placeholder="Enter Middle/Father's Name" maxlength="15"
+                    value="<%= user.mname || data.mname %>">
+                </div>
+                <div class="col-sm-4">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" disabled
+                    placeholder="Enter Last Name/Surname" maxlength="15"
+                    value="<%= user.lname || data.lname %>">
+                </div>
+                <div class="col-sm-4 pt-3">
+                    <label >Gender</label>
+                    <div class="card row mt-1 mx-1 p-2">
+                    <div class="custom-control custom-radio"> 
+                        <input type="radio" class="custom-control-input" id="male" name="gender" disabled 
+                        value="Male"<%= (user.gender=='Male' || data.gender=='Male') ? 'checked':"" %>>
+                        <label class="custom-control-label " for="male">Male</label>
+                        &emsp;
+                        <input type="radio" class="custom-control-input" id="female" name="gender" disabled
+                        value="Female"<%= (user.gender=='Female' || data.gender=='Female') ? 'checked':"" %>>
+                        <label class="custom-control-label" for="female">Female</label>
+                        &emsp;
+                        <input type="radio" class="custom-control-input" id="other" name="gender" disabled
+                        value="Other"<%= (user.gender=='Other' || data.gender=='Other') ? 'checked':"" %>>
+                        <label class="custom-control-label" for="other">Other</label>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 pt-3">
+                    <label for="birthDate" class="form-label" >Date of Birth</label>
+                    <input type="date" class="form-control" id="birthDate" name="birthDate" disabled
+                    min="1921-01-01" max="2020-12-31"
+                    value="<%= user.birthDate || data.birthDate %>">
+                </div>
+                <div class="col-sm-6 pt-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address1" name="address1" required
+                    placeholder="Wing-Flat No., Building No., Building Name," maxlength="50"
+                    value="<%= user.address1 %>">
+                    <input type="text" class="form-control mt-2" id="address2" name="address2" required
+                    placeholder="Street Name, Locality." maxlength="50"
+                    value="<%= user.address2 %>">
+                </div>
+                <div class="col-sm-2 pt-3">
+                  <label for="city" class="form-label">City</label>
+                  <input type="text" class="form-control" id="city" name="city" required
+                  placeholder="Enter City Name" maxlength="25"
+                  value="<%= user.city %>">
+                </div>
+                <div class="col-sm-2 pt-3">
+                  <label for="state" class="form-label">State</label>
+                  <br>
+                  <select id="state" class="form-select" name="state" required>
+                    <option value="">Choose One State</option>
+                    <option value="Maharashtra"<%= user.state=='Maharashtra' ? 'selected':"" %>>Maharashtra</option>
+                    <option value="Delhi"<%= user.state=='Delhi' ? 'selected':"" %>>Delhi</option>
+                    <option value="Goa"<%= user.state=='Goa' ? 'selected':"" %>>Goa</option>
+                  </select>
+                </div>
+                <div class="col-sm-2 pt-3">
+                  <label for="zip" class="form-label">Zip/Postal Code</label>
+                  <input type="text" class="form-control" id="zip" name="zip" required 
+                  placeholder="Eg. 4000001" maxlength="6"
+                  value="<%= user.zip %>">
+                </div>
+                <div class="col-sm-4 pt-3">
+                    <label for="phone" class="form-label">Phone No.</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required
+                    placeholder="Enter 10-digit Mobile Number" pattern="[7-9]{1}[0-9]{9}"
+                    value="<%= user.phone %>">
+                </div>
+                <!--User LoginID and Password-->
+                <div class="col-sm-4 pt-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required
+                    placeholder="Enter Email ID"
+                    value="<%= user.email %>">
+                </div>
+                <!--Submit Button-->
+                <div class="col-12 pt-4">
+                    <a href="/user/myProfile?id=<%= user._id %>" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>

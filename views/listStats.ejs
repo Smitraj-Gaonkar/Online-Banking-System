@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>Account Statements</title>
+</head>
+<body>
+    <%- include('./subviews/navbar')-%>
+    <%- include('./subviews/sideNavbar')-%>
+    <div class="main_content">
+        <div class="header ps-3 pt-3">
+            <h6>Account Statement</h6>
+        </div>
+        <div class="info">
+            <div class="card p-4" style="width:100%">
+               
+                    <table class="table table-hover" >
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Account No.</th>
+                                <th>Email-Id</th>
+                                <th>City</th>
+                                <th  style="text-align:center">Balance</th>
+                                <th colspan="2">View Statement</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                            <% for(var i=0; i<users.length; i++) { %>
+                            <tr>
+                                <td><%= i+1 %></td>
+                                <td><%= users[i].fname %>&nbsp;<%= users[i].lname %></td>
+                                <td><%= users[i].accountNo %></td>
+                                <td><%= users[i].email%></td>
+                                <td><%= users[i].city || "N/A"%> </td>
+                                <td style="text-align:right; padding-right:60px"><%= users[i].balance%></td>
+                                <td style="width:150px; text-align: center">
+                                    <a href="/admin/adminStats?id=<%= users[i].accountNo%>">
+                                    <i class="fas fa-file-alt"></i></a></td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+             
+            </div>
+        </div>
+    </div>
+</body>

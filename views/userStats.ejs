@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>Account Statement</title>
+</head>
+<body>
+    <%- include('./subviews/navbar')-%>
+    <%- include('./subviews/sideNavbar-2')-%>
+    <div class="main_content">
+        <div class="header ps-3 pt-3">
+            <h6>Account Statement: A/c no.&nbsp;<%= user.accountNo%></h6>
+        </div>
+        <div class="info">
+            <div class="card p-4" style="width:100%">
+                <table class="table table-hover" >
+                    <thead>
+                        <tr>
+                            <th>Txn No.</th>
+                            <th>Date</th>
+                            <th>Statements</th>
+                            <th style="text-align:center">Debit/Credit</th>
+                            <th style="text-align:center">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                        <% for(var i=0; i<users.length; i++) { %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= users[i].Date.toISOString().slice(0,10) %></td>
+                            <td><%= users[i].stats %></td>
+                            <td style="text-align:right; padding-right:60px"><%= users[i].amount %></td>
+                            <td style="text-align:right; padding-right:60px"><%= users[i].balance%></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

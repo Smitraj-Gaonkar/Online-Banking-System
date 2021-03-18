@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>Fund Transfer</title>
+</head>
+<body>
+    <%- include('./subviews/navbar')-%>
+    <%- include('./subviews/sideNavbar-2')-%>
+    <div class="main_content">
+        <div class="header ps-3 pt-3">
+            <h6>Fund Transfer</h6>
+        </div>
+        <div class="info">
+            <div class="card p-4" style="width:100%">
+                <%- include('./subviews/messages')-%>
+                    <h5>Available Balance :&ensp;<i class="fas fa-rupee-sign"></i>
+                    <b style="font-size: 1.5rem">&nbsp;<%= user.balance%></b>.00</h6>
+            </div> 
+            <div class="card p-4" style="width:100%">
+                <form action="/user/transfund" method="POST">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <h5><b>Make a Payment</b></h5>
+                        </li>
+                        <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-2 pt-2" style="line-height: 40px">
+                                <label class="form-label">From A/c no.</label>
+                                <label class="form-label">To A/c no.</label>
+                                <label class="form-label">Enter Amount</label>
+                            </div>
+                            <div class="col-sm-3 pt-2">
+                                <input type="number" class="form-control mb-2" disabled  value="<%= user.accountNo %>"/>
+                                <input type="hidden" name="send" id="send" value="<%= user.accountNo %>">
+                                <input type="number" class="form-control mb-2" name="recv" id="recv" required  
+                                value="<%= typeof recv != 'undefined' ? recv : ''%>" placeholder="Enter Account Number"/>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="rupee"><i class="fas fa-rupee-sign"></i></span>
+                                    <input type="number" class="form-control" name="amount" id="amount" required 
+                                    value="<%= typeof amount != 'undefined' ? amount : ''%>" min="10" max="5000"
+                                    placeholder="Enter Amount"/>
+                                </div>
+                                <sub>Between Rs.10 to 5,000</sub>
+                                <br><br>
+                                <button type="submit" class="btn btn-primary">Proceed to Pay</button> 
+                            </div>
+                        </div>
+                        </li>  
+                    </ul>
+                </form>
+            </div>
+        </div> 
+    </div> 
+</body>        

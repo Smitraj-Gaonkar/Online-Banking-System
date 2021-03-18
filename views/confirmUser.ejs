@@ -1,0 +1,79 @@
+<head>
+    <title>Confirmation Page</title>
+</head>
+<body>
+    <form action="/admin/confirmUser" method="POST">
+        <div class="card m-auto w-50" >
+            <h5 class="card-header">Transaction Confirmation</h5>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-4" style="line-height: 30px">
+                                <label><b>From Payor</b></label><br><br>
+                                <label>Account Number</label>
+                                <label>Account Name</label>
+                                <label>Mobile Number</label><br>
+                                <label>Email ID</label><br>
+                                <label>Place</label>
+                            </div>
+                            <div class="col-sm-8" style="line-height: 30px">
+                                <label> </label><br><br>
+                                <label>:&ensp;<%= user.accountNo%></label><br>
+                                <label>:&ensp;<%= user.fname%>&nbsp;<%= user.mname%>&nbsp;<%= user.lname%></label><br>
+                                <label>:&ensp;<%= user.phone%></label><br>
+                                <label>:&ensp;<%= user.email%></label><br>
+                                <label>:&ensp;<%= user.city%>,&nbsp;<%= user.state%></label><br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-4 mt-3" style="line-height: 30px">
+                                <label><b>To Payee</b></label><br><br>
+                                <label>Account Number</label><br>
+                                <label>Account Name</label><br>
+                                <label>Mobile Number</label><br>
+                                <label>Email ID</label><br>
+                                <label>Place</label>
+                            </div>
+                            <div class="col-sm-8 mt-3" style="line-height: 30px">
+                                <label> </label><br><br>
+                                <label>:&ensp;<%= user2.accountNo%></label><br>
+                                <label>:&ensp;<%= user2.fname%>&nbsp;<%= user2.mname%>&nbsp;<%= user2.lname%></label><br>
+                                <label>:&ensp;<%= user2.phone%></label><br>
+                                <label>:&ensp;<%= user2.email%></label><br>
+                                <label>:&ensp;<%= user2.city%>,&nbsp;<%= user2.state%></label><br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                        <div class="col-sm-4 mt-3" style="line-height: 30px">
+                            <label>Pay Amount</label>
+                        </div>
+                        <div class="col-sm-8 mt-3" style="line-height: 30px">
+                            <label>:&ensp;<i class="fas fa-rupee-sign"></i>&nbsp;<b><%= amount %></b>.00</label>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <p>If the above details are correct, click on "PAY" to confirm the payement<br>
+                    <a href="/user/transfund?id=<%= user._id%>" class="btn btn-danger">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Pay</button>
+                </p>
+            </div>
+        </div>
+        <input type="hidden" name="sendId" value="<%= user._id %>">
+        <input type="hidden" name="sendNo" value="<%= user.accountNo %>">
+        <input type="hidden" name="sendName" value="<%= user.fname %> <%= user.lname %>">
+        <input type="hidden" name="sendBal" value="<%= user.balance %>">
+        <input type="hidden" name="recvId" value="<%= user2._id %>">
+        <input type="hidden" name="recvNo" value="<%= user2.accountNo %>">
+        <input type="hidden" name="recvName" value="<%= user2.fname %> <%= user2.lname %>">
+        <input type="hidden" name="recvBal" value="<%= user2.balance %>">
+        <input type="hidden" name="amount" value="<%= amount %>">
+    </form>
+</body>

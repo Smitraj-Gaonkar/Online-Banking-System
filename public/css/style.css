@@ -1,0 +1,140 @@
+            *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif; 
+}
+body{
+    background: #e6ffff;
+}
+a,
+a:hover,
+a:focus{
+    text-decoration: none;
+    background: inherit;
+    color:inherit;
+    transition: all 0.3s;
+} 
+.form-control{
+    font-size: 0.9rem;
+}
+.form-select{
+    font-size: 0.9rem;
+}
+.wrapper{
+    display: flex;
+    position: relative;
+}
+.navbar1{
+    background-color: #003b4d;
+}
+.navbar2{
+    border-bottom: 1px solid #007a99;
+}
+.wrapper .sidebar{
+    position: absolute;
+    width: 200px;
+    height: 547px;
+    background: #007a99;
+    padding: 10px;
+}
+
+.wrapper .sidebar h6{
+    text-transform:uppercase;
+    text-align:center;
+    background: #003b4d;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.wrapper .sidebar ul li {
+    
+    margin-left: -30px;
+    text-transform: none;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px #000;
+    color:#fff;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #000;
+}
+
+.wrapper .sidebar ul li a .fas{
+    width: 30px;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    padding: 10px;
+}
+.wrapper .sidebar ul li a:hover{
+    background: #fff;
+    color: #003b4d;
+    text-shadow: 1px 1px #fff;
+}
+
+.wrapper .sidebar ul ul li{
+    font-size: 0.8rem;
+    background: #ccf5ff;
+    color: #003b4d;
+    text-shadow: 1px 1px #fff;
+    margin-left: -62px;  
+}
+
+.wrapper .sidebar ul ul a {
+    padding-left: 40px;
+}
+
+.wrapper .sidebar ul ul a:hover {
+    background: #003b4d;
+    color:#fff;
+    text-shadow: 1px 1px #000;
+    
+}
+
+.wrapper .sidebar .LogOut {
+    position:fixed;
+    bottom: 20px;
+    margin-left: -20px;
+}
+.wrapper .sidebar .LogOut a {
+    display: block;
+    text-transform: none;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 150px;
+    padding:8px;
+    background: #003b4d;
+    color: #fff;
+}
+
+.wrapper .sidebar .LogOut a:hover{
+    background: #fff;
+    color:#003d4d;
+}
+
+.wrapper .sidebar .LogOut a .fas{
+    width: 25px;
+}
+
+.main_content{
+    width: auto;
+    height: 547px;
+    margin-left: 200px;
+    font-size: 0.9rem;
+    overflow-y:scroll;
+}
+ 
+.main_content .header{
+    padding: 10px;
+    background: #003d4d;
+    color: #fff;
+    font-weight: 700;
+}
+
+.main_content .info{
+    margin: 20px;
+}

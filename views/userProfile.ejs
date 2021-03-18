@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>User Profile</title>
+    
+</head>
+<body>
+    <%- include('./subviews/navbar')-%>
+    <%- include('./subviews/sideNavbar')-%>
+    <div class="main_content">
+        <div class="info">
+            <div class="card " style="width:100%">
+          
+                <h4 class="card-header p-3">User Profile</h4>
+                <div class="card-body">
+                    <div class="card-text px-3 row" style="line-height: 40px">
+                        <div class = "col-sm-2"><b>
+                            Account No. <br>
+                            Name <br>
+                            D.O.B <br>
+                            Gender <br>
+                            Address <br><br><br>
+                            Mobile No. <br>
+                            Email Id <br>
+                        </b></div>
+                        <div class = "col-sm-10">
+                            :&nbsp;<%= user.accountNo %><br>
+                            :&nbsp;<%= user.fname%>&nbsp;<%= user.mname%>&nbsp;<%= user.lname%><br>
+                            :&nbsp;<%= user.birthDate%><br>
+                            :&nbsp;<%= user.gender%><br>
+                            :&nbsp;<%= user.address1%><br>
+                             &ensp;<%= user.address2%>,<br>
+                             &ensp;<%= user.city%>,&ensp;<%= user.state%>&nbsp;-&nbsp;<%= user.zip%>.<br>
+                            :&nbsp;+91&nbsp;<%= user.phone%><br>
+                            :&nbsp;<%= user.email%><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                        <a href="/admin/manageUser" class="btn btn-primary">Go Back</a>
+                </div>
+          
+            </div>
+        </div>
+</body>

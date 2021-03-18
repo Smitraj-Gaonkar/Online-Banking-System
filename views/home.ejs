@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Home page</title>
+</head>
+<body>
+    <%- include('./subviews/navbar')-%>
+    
+    <div class="card m-auto mt-5 w-25" >
+        <h5 class="card-header p-3" style="text-align: center">
+            <i class="fas fa-user">&nbsp;</i>
+            User Login
+        </h5>
+        <div class="card-body">
+            <%- include('./subviews/messages')-%>
+            <form action="/userLogin" method="POST" >
+                <fieldset>
+                    <div class="form-group pb-3">
+                        <label for="email" class="form-label" >Email address</label>
+                        <input type="text" class ="form-control" id="email" name="email" placeholder="Enter Email"/>
+                    </div>
+                    <div class="form-group pb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class ="form-control" id="password" name="password" placeholder="Enter Password"/>
+                    </div>
+                    <button type="submit" class="btn btn-block mt-2 w-100" style="background-color: #003b4d; color:#fff">Login</button>
+                    <a class="nav-link pt-3 " style="text-align:center; color: #003b4d" href="adminLogin">Admin Login</a>
+                    </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

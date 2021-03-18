@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Change Password</title>
+</head>
+<body>
+    <div class="card m-auto w-50" >
+        <h5 class="card-header">Change Password</h5>
+        <div class="card-body">
+            <%- include('./subviews/messages')-%>
+            <form action='/admin/users/<%= user._id %>?_method=PUT' method="POST">
+            <input type="hidden" class="form-control" id="_id" name="_id"value="<%= user._id %>">
+            <div class="col-sm-6">
+                <label for="password" class="form-label">New Password</label>
+                <input type="password" class="form-control" id="password" name="password" required
+                placeholder="Password between 6-12 characters"
+                value="<%= typeof password != 'undefined' ? password : '' %>">
+            </div>
+            <div class="col-sm-6 pt-3">
+                <label for="confpass" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confpass" name="confpass" required
+                placeholder="Enter Confirm Password"
+                value="<%= typeof confpass != 'undefined' ? confpass : '' %>">
+            </div>
+        </div>
+        <div class="card-footer">
+            <p>
+                <button type="submit" class="btn btn-danger">Save</button>
+                <a href="/admin/manageUser" class="btn btn-primary">Cancel</a>
+            </form> 
+            </p>
+        </div>
+    </div>
+</body>

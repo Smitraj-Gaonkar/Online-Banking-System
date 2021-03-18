@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <%- include('./subviews/navbar')-%>
+    <%- include('./subviews/sideNavbar')-%>
+    <div class="main_content">
+        <div class="header ps-3 pt-3">
+            <h6>Dashboard</h6>
+        </div>
+        <div class="info row gap-3">
+            <div class="card" style="width:32%; height:220px; color:#58FFD4; background-color: #008080">
+                <div class="row ">
+                    <div class="col-sm-4 p-4">
+                        <i class="fas fa-users fa-6x"></i>
+                        <a href="/admin/addUser" class="btn btn-primary" 
+                        style="margin-top: 60px; font-size: xx-small; background-color: #58FFD4; 
+                        color: #008080; border-color: #58FFD4" >Add More</a>
+                    </div>
+                    <div class="col-sm-8" style="text-shadow: 1px 1px 2px #000">
+                        <label style="font-size: 3.7rem" class="pt-4 ps-4"><%= noCust%></label>
+                        <label style="font-size: 1.2rem">Customers</label> 
+                        <label style="font-size: larger" class="ps-2 ">Total Active Customers</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card " style="width:32%; height:220px; color:#ffe6cc; background-color: #ff8c1a">
+                <div class="row ">
+                    <div class="col-sm-4 p-4">
+                        <i class="fas fa-wallet fa-6x"></i>
+                        <a href="/admin/fund" class="btn btn-primary" 
+                        style="margin-top: 60px; font-size: x-small; background-color: #ffe6cc; 
+                        color: #ff8c1a; border-color: #ffe6cc">+ Money</a>
+                    </div>
+                    <div class="col-sm-8 pt-4" style="text-shadow: 1px 1px 2px #000">
+                        <label style="font-size: 1.5rem" class="ps-2"><i class="fas fa-rupee-sign"></i></label>
+                        <label style="font-size: 2.5rem" class="pt-4 ps-2"><%= user.balance%></label>
+                        <label style="font-size: 1.5rem">.00</label> 
+                        <label style="font-size: larger" class="ps-2 ">Total Available Balance</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card " style="width:32%; height:220px; color:#b3f0ff; background-color: #007a99">
+                <div class="row ">
+                    <div class="col-sm-4 p-4">
+                        <i class="fas fa-piggy-bank fa-6x"></i>
+                        <a href="/admin/fund" class="btn btn-primary" 
+                        style="margin-top: 60px; font-size: x-small; background-color: #b3f0ff; 
+                        color: #007a99; border-color: #b3f0ff">+ Money</a>
+                    </div>
+                    <div class="col-sm-8 pt-4" style="text-shadow: 1px 1px 2px #000">
+                        <label style="font-size: 1.5rem" class="ps-2"><i class="fas fa-rupee-sign"></i></label>
+                        <label style="font-size: 2.5rem" class="pt-4 ps-2"><%= depoValue%></label>
+                        <label style="font-size: 1.5rem">.00</label>
+                        <label style="font-size: larger" class="ps-2 ">Total Amount Deposited</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card " style="width:32%; height:220px; text-shadow:1px 1px #550080;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="color: #fff; background-color: #bb33ff; 
+                    margin-right: -12px; margin-left: -12px">
+                        <label style="font-size: 1.5rem" class="ps-2"><i class="fas fa-rupee-sign"></i></label>
+                        <label style="font-size: 2.8rem" class="ps-2"><%= sentValue%></label>
+                        <label style="font-size: 1.5rem">.00</label><br>
+                        <label style="font-size: 1.1rem">Total Amount Sent</label>
+                        
+                    </li>
+                    <li class="list-group-item" style="color: #fff; background-color: #cc66ff;
+                    margin-right: -12px; margin-left: -12px">
+                        <label style="font-size: 1.5rem" class="ps-2"><i class="fas fa-rupee-sign"></i></label>
+                        <label style="font-size: 2.8rem" class="ps-2"><%= recvValue%></label>
+                        <label style="font-size: 1.5rem">.00</label><br>
+                        <label style="font-size: 1.1rem">Total Amount Received</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="card " style="width:32%; height:220px; text-shadow:1px 1px #fff;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="color: #0f5132;background-color: #77ffc2; 
+                    margin-right: -12px; margin-left: -12px">
+                        <label style="font-size: 2.8rem"><%= noTrans%></label><br>
+                        <label style="font-size: 1.1rem">Successful Transactions</label>
+                        
+                    </li>
+                    <li class="list-group-item" style="color: #842029; background-color: #ffb0b7;
+                    margin-right: -12px; margin-left: -13px">
+                        <label style="font-size: 2.8rem">0</label><br>
+                        <label style="font-size: 1.1rem">Failed Transaction</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="card " style="width:32%; height:220px; border-color: rgb(58, 53, 53);">
+                <div class="row ">
+                    <div class="col-sm-4 p-4">
+                        <a href="/admin/fund"><i class="fas fa-money-check fa-5x"></i></a>
+                    </div>
+                    <div class="col-sm-8 pt-4" style="text-shadow: 1px 1px 2px #000">
+                        <a href="/admin/fund">
+                        <label style="font-size: 1.2rem" class="pt-5 ps-2 ">Make a </label>
+                        <label style="font-size: 2.5rem" class="ps-2">Payment</label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
